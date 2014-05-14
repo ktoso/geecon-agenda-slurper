@@ -1,7 +1,7 @@
 import sbt._
 import Keys._
-import sbtassembly.Plugin._
-import AssemblyKeys._
+//import sbtassembly.Plugin._
+//import AssemblyKeys._
 
 object Resolvers {
 
@@ -22,7 +22,7 @@ object BuildSettings {
     organization := "pl.project13.geecon",
     name := "agendaparser",
     version := "0.0.1-SNAPSHOT",
-    scalaVersion := "2.9.2",
+    scalaVersion := "2.10.4",
 
     resolvers := myResolvers,
     scalacOptions += "-unchecked",
@@ -47,7 +47,7 @@ object MeetupGetNamesBuild extends Build {
   lazy val parent: Project = Project(
     "root",
     file("."),
-    settings = buildSettings ++ assemblySettings
+    settings = buildSettings //++ assemblySettings
   )
 
 }

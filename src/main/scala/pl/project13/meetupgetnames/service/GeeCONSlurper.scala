@@ -7,9 +7,9 @@ import pl.project13.meetupgetnames.data.NextUpSession
 
 class GeeCONSlurper {
 
-  val day1 = "http://2013.geecon.org/schedule"
-  val day2 = "http://2013.geecon.org/conference-day-two"
-  val day3 = "http://2013.geecon.org/conference-day-three"
+  val day1 = "http://2014.geecon.org/schedule"
+  val day2 = "http://2014.geecon.org/conference-day-two"
+  val day3 = "http://2014.geecon.org/conference-day-three"
 
   def slurpPresentations(): List[NextUpSession] = {
     val all = slurpPresentations(day1, 1) :::
@@ -48,7 +48,7 @@ class GeeCONSlurper {
       val speakers = slot.select("a").toList.map(_.text).mkString(", ")
       val title = slot.select(".lecture_title").toList.map(_.text).headOption.getOrElse("")
 
-      val onDay = "5.%d.2013".format(14 + day)
+      val onDay = "5.%d.2014".format(14 + day)
       NextUpSession(onDay, startsAt, inRoom.toString, inRoom.toString, speakers, title)
     }
   }

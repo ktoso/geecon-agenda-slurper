@@ -1,6 +1,7 @@
 import sbt._
 import Keys._
 
+/*
 object Plugins extends Build {
   lazy val plugins = Project(
     "plugins",
@@ -19,3 +20,4 @@ object Plugins extends Build {
       )
 
 }
+*/
